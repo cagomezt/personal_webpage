@@ -66,13 +66,26 @@ To update your CV or add new achievements, simply edit these JSON files and rebu
 
 ## 🌐 Deployment
 
-This project is configured for GitHub Pages with the base path `/personal_webpage/`.
+This project uses **GitHub Actions** to automatically build and deploy to GitHub Pages.
 
-To deploy:
+### Automatic Deployment
 
-1. Push your changes to the `main` branch
-2. Enable GitHub Pages in repository settings:
-   - Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: `main` / `dist` folder (if using GitHub Actions) OR build locally and push `dist` to `gh-pages` branch
+1.  Simply push your changes to the `main` branch:
+    ```bash
+    git add .
+    git commit -m "Update content"
+    git push
+    ```
+
+2.  The GitHub Action workflow (`.github/workflows/deploy.yml`) will automatically:
+    -   Install dependencies
+    -   Build the project
+    -   Deploy to GitHub Pages
+
+3.  **Initial Setup Required:**
+    -   Go to Repository Settings → Pages
+    -   Under "Build and deployment", set **Source** to **GitHub Actions**
+    -   (The workflow handles the rest)
+
+Your site will be live at: `https://cagomezt.github.io/personal_webpage/`
 
