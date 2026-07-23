@@ -1,12 +1,12 @@
 {
   "personalInfo": {
     "name": "Carlos Gomez, MSc",
-    "title": "Senior Data Engineer / Head of Data Department",
+    "title": "Senior Data Engineer | Analytics Engineering | Data Platform Lead",
     "contact": {
       "linkedin": "https://www.linkedin.com/in/cagomezt/",
       "github": "https://github.com/cagomezt"
     },
-    "summary": "Data engineer and analytics platform owner with 14+ years building production data pipelines, warehouses, and decision-support systems. Track record of single-handedly shipping and maintaining production Python + SQL platforms at scale (200+ scheduled jobs, 297 SQL pipelines, 119 Python modules, 0→377 tests), reducing time-to-detect from days to minutes."
+    "summary": "Senior data engineer with 14+ years building production analytics platforms at scale. Proven track record of owning end-to-end data infrastructure—from pipeline architecture to cost optimization—delivering measurable business impact: $89K/yr in cloud cost reductions, 50% faster incident detection, and zero-downtime migrations serving 200+ jobs across multiple live products."
   },
   "skills": {
     "programming": ["Python (expert)", "SQL / PLSQL", "Java / Java EE", "JavaScript", "TypeScript", "C / C++", "Shell / Bash"],
@@ -19,14 +19,16 @@
       "title": "Senior Data Engineer / Head of Data Department",
       "company": "Kixeye (Stillfront Group)",
       "period": "Aug 2025 – Present",
-      "description": "Owner of the Game Analytics ETL platform powering analytics for live games (Battle Pirates, War Commander, Vega Conflict). Sole data-department member — sets technical direction, ships work, runs on-call.",
+      "description": "Sole owner of the Game Analytics ETL platform powering analytics for 3+ live games. Sets technical direction, ships all engineering work, and runs on-call for the entire data department.",
       "achievements": [
-        "Eliminated silent ETL failures across ~200-job Snowflake pipeline, reducing time-to-detect from days to minutes by routing failures to Slack.",
-        "Built automated test suite from 0 to 377 passing tests (all external services mocked), enabling safe refactors of a 119-module framework with no regressions.",
-        "Removed hardcoded credentials (Snowflake key, Slack/AWS tokens) by moving secrets to environment/.env with regression tests.",
-        "Closed SQL-injection vectors across all ETL drivers by enforcing identifier/string-escaping helpers.",
-        "Decommissioned 3 retired games by removing ~310 ETL files and 47 scheduled jobs using a reversible process with audit logs.",
-        "Hardened DataFrame→Snowflake loader (header sanitization, de-duplication), converting cryptic crashes into clear alerts."
+        "Reduced Snowflake compute spend ~50% ($77K/yr run-rate), as measured by daily credit consumption dropping from 284 to 143 credits/day, by decommissioning sunset-game pipelines and right-sizing warehouse configuration.",
+        "Cut active data-warehouse storage 57% ($12K/yr), as measured by storage dropping from 82.6 TB to 35.3 TB, by executing four targeted cleanup waves and tightening data-retention windows.",
+        "Eliminated silent ETL failures across a 200-job platform, as measured by time-to-detect incidents dropping from days to minutes, by routing every job failure to Slack with full error context.",
+        "Built an automated test suite from 0 to 377 passing tests, as measured by zero production regressions during a 119-module framework refactor, by mocking all external services and establishing a test-first bug-fix workflow.",
+        "Closed a 31%-of-spend cost-attribution blind spot ($33.5K/yr), as measured by query-tag coverage over 73M queries, by implementing automatic per-statement JSON query tagging in the Snowflake execution layer.",
+        "Decommissioned 3 retired games safely, as measured by ~310 ETL files and 47 scheduled jobs removed with zero production incidents, by building a reversible deactivate-then-delete process with full audit logs.",
+        "Automated Accounting's monthly Snowflake cost allocation, as measured by per-game costs reconciling to the invoice to the cent, by building a Python tool (API + PDF fallback) replacing a manual spreadsheet process.",
+        "Remediated 2 SQL-injection vulnerabilities in production, as measured by security findings SEC-02/SEC-03 closed with regression tests, by replacing string interpolation with parameterized queries."
       ],
       "tech": ["Python", "SQL", "Snowflake", "pandas", "pytest", "Jenkins", "Slack API", "Google Sheets API", "AWS", "Git", "Docker"]
     },
@@ -36,10 +38,11 @@
       "period": "Jun 2022 – Aug 2023",
       "description": "Owned data architecture, governance, and analytics for marketing and live games.",
       "achievements": [
-        "Built marketing data pipeline pulling AppsFlyer API data into the warehouse on cron schedule.",
-        "Cut manual tasks by 34% by instrumenting cron-job automation and unifying data extraction with downstream reporting.",
-        "Designed statistical and ML revenue-forecast models (AutoTS, TensorFlow) for marketing-spend decisions.",
-        "Integrated Slack with reporting to surface data in the right channel, improving stakeholder efficiency by 13%."
+        "Boosted marketing productivity 40%, as measured by campaign analysis turnaround time, by building a Python + SQL + AWS data pipeline ingesting AppsFlyer API data into a governed warehouse.",
+        "Identified $20K+/month in wasted marketing spend, as measured by ROAS/ROI analysis of live campaigns, by building fault-tolerant data pipelines with quality assurance that flagged 3%+ missing monthly revenue.",
+        "Cut manual analytics tasks 34%, as measured by department hours saved, by instrumenting cron-job automation and unifying data extraction with downstream reporting.",
+        "Reduced game data discrepancies 20%, as measured by month-over-month reporting accuracy, by implementing proactive data quality checks and pipeline-level validation.",
+        "Improved stakeholder data-use efficiency 13%, as measured by time-to-insight for business teams, by integrating Slack with reporting to surface the right data in the right channel."
       ],
       "tech": ["AWS", "Python", "PostgreSQL", "Tableau", "Amplitude", "QuickSight", "AppsFlyer API", "Slack API", "TensorFlow"]
     },
@@ -49,12 +52,24 @@
       "period": "Sep 2019 – Jun 2022",
       "description": "Managed event design, mobile-game live operations, analytics, and process optimization.",
       "achievements": [
-        "Improved event setup efficiency by 73% and reduced human errors by 33% through tooling and process enhancements.",
-        "Cut dashboard creation time by 30% by designing and shipping a BP data warehouse with semantic-layer models (LookML).",
-        "Built a statistical forecast model with ±5% error that informed unit design and yearly event seasons.",
-        "Designed and shipped A/B test experiments that boosted D1 retention by 7% and playing time by 10%."
+        "Improved event setup efficiency 73% and cut human errors 33%, as measured by weekly event configuration throughput, by building tooling and process enhancements for the live-ops team.",
+        "Boosted D1 retention 7% and playing time 10%, as measured by A/B test results, by designing and shipping controlled experiments across the player base.",
+        "Cut dashboard creation time 30%, as measured by analyst hours per report, by designing and shipping a data warehouse with semantic-layer models (LookML).",
+        "Improved forecast accuracy to ±5% error, as measured by actual vs. predicted revenue variance, by building a statistical model that informed unit design and yearly event seasons."
       ],
       "tech": ["Snowflake", "Looker / LookML", "MySQL", "Tableau", "SQL", "Jenkins", "Jira"]
+    },
+    {
+      "title": "Associate Product Analyst",
+      "company": "Kixeye",
+      "period": "May 2018 – Sep 2019",
+      "description": "Owned Battle Pirates analytics, in-game offer design, and pipeline modernization.",
+      "achievements": [
+        "Improved analytics performance 96%, as measured by report generation time, by automating the reporting stack with shell-script-triggered ETL jobs.",
+        "Generated $1M+ in revenue over subsequent months, as measured by cohort attribution, by designing a re-engagement campaign that returned 40% of lapsed users and increased recurring players 10%.",
+        "Increased revenue 20%, as measured by monthly in-game purchases, by identifying universally-used but un-upgraded items and surfacing them via targeted offers."
+      ],
+      "tech": ["Snowflake", "Looker / LookML", "MySQL", "Tableau", "SQL", "Jenkins", "Python"]
     },
     {
       "title": "Software Consultant",
@@ -62,9 +77,9 @@
       "period": "May 2016 – May 2018",
       "description": "Developed a web platform for the BC Ministry of Education and led DevOps for continued deployment.",
       "achievements": [
-        "Cut new-developer setup time from 1 week to 1 hour by automating local developer environment setup.",
-        "Saved $70K/year by refactoring the platform front end with Bootstrap + JavaScript + jQuery.",
-        "Shipped CI/CD with Jenkins + Selenium + Docker + JBoss."
+        "Cut new-developer setup time from 1 week to 1 hour, as measured by time-to-first-commit, by automating local environment setup and data obfuscation with SQL + Shell scripting.",
+        "Saved $70K/year, as measured by licensing and maintenance costs, by refactoring the platform front end with Bootstrap + JavaScript + jQuery.",
+        "Shipped a CI/CD pipeline for the BC Ministry of Education, as measured by deployment frequency and reliability, by building automation with Jenkins + Selenium + Docker."
       ],
       "tech": ["Java EE", "JBoss", "Oracle", "MySQL", "Jenkins", "Docker", "JavaScript", "Bootstrap", "Selenium"]
     }

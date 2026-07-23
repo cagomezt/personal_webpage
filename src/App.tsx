@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { Navbar, Nav, Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
 import cvData from './data/cv.json'
 import achievementsData from './data/achievements.json'
+import { downloadMarkdown, generatePDFCV } from './utils/cvGenerator'
 import './index.css'
 
 function Navigation() {
@@ -43,15 +44,15 @@ function HomePage() {
         <Card.Body>
           <Card.Title as="h3">Quick Links</Card.Title>
           <div className="d-grid gap-2 d-md-block mt-3">
-            <Button as={Link} to="/cv" variant="primary" size="lg" className="me-2">
+            <Link to="/cv" className="btn btn-primary btn-lg me-2">
               📄 View my full CV
-            </Button>
-            <Button as={Link} to="/achievements" variant="outline-primary" size="lg" className="me-2">
+            </Link>
+            <Link to="/achievements" className="btn btn-outline-primary btn-lg me-2">
               🏆 See my achievements
-            </Button>
-            <Button as={Link} to="/contact" variant="outline-secondary" size="lg">
+            </Link>
+            <Link to="/contact" className="btn btn-outline-secondary btn-lg">
               📧 Get in touch
-            </Button>
+            </Link>
           </div>
         </Card.Body>
       </Card>
@@ -89,8 +90,20 @@ function CVPage() {
         <Col>
           <Card>
             <Card.Body>
-              <h1>{cvData.personalInfo.name}</h1>
-              <h3 className="text-primary">{cvData.personalInfo.title}</h3>
+              <div className="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+                <div>
+                  <h1 className="mb-1">{cvData.personalInfo.name}</h1>
+                  <h3 className="text-primary">{cvData.personalInfo.title}</h3>
+                </div>
+                <div className="d-flex flex-column gap-2">
+                  <Button variant="danger" size="sm" onClick={generatePDFCV}>
+                    📄 Download PDF
+                  </Button>
+                  <Button variant="outline-secondary" size="sm" onClick={downloadMarkdown}>
+                    📝 Download Markdown
+                  </Button>
+                </div>
+              </div>
               <p className="lead mt-3">{cvData.personalInfo.summary}</p>
             </Card.Body>
           </Card>
@@ -103,14 +116,14 @@ function CVPage() {
           <div className="mt-3">
             <div className="mb-2">
               <strong>LinkedIn:</strong>{' '}
-              <a href="https://www.linkedin.com/in/cagomezt/" target="_blank" rel="noopener noreferrer" className="text-primary">
+              <a href={cvData.personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary">
                 /in/cagomezt/
               </a>
             </div>
             <div className="mb-2">
               <strong>GitHub:</strong>{' '}
-              <a href={`https://github.com${cvData.personalInfo.contact.github}`} target="_blank" rel="noopener noreferrer" className="text-primary">
-                {cvData.personalInfo.contact.github}
+              <a href={cvData.personalInfo.contact.github} target="_blank" rel="noopener noreferrer" className="text-primary">
+                /cagomezt
               </a>
             </div>
           </div>
@@ -250,7 +263,7 @@ function ContactPage() {
 
           <div className="d-grid gap-3 d-md-block mt-4">
             <Button
-              href="https://www.linkedin.com/in/cagomezt/"
+              href={cvData.personalInfo.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"
@@ -261,7 +274,7 @@ function ContactPage() {
             </Button>
 
             <Button
-              href={`https://github.com${cvData.personalInfo.contact.github}`}
+              href={cvData.personalInfo.contact.github}
               target="_blank"
               rel="noopener noreferrer"
               variant="dark"
