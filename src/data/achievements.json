@@ -1,0 +1,116 @@
+[
+  {
+    "year": "2026",
+    "title": "Snowflake Cost & Infrastructure Optimization",
+    "highlights": [
+      "Cut daily Snowflake compute spend ~50% (284 → 143 credits/day; ~$77K/yr run-rate).",
+      "Reduced active Snowflake storage 57% (82.6 → 35.3 TB, −47 TB ≈ $12K/yr).",
+      "Eliminated 31%-of-spend cost-attribution blind spot (~22,300 untagged credits ≈ $33.5K/yr).",
+      "Identified ~$33K/yr of addressable idle-warehouse waste.",
+      "Fixed two SQL-injection vulnerabilities with regression tests.",
+      "Raised test coverage to 351 checks across 58 files."
+    ],
+    "categories": [
+      {
+        "name": "Financial Impact",
+        "items": [
+          "Reduced Snowflake compute spend ~50% (~$77K/yr run-rate).",
+          "Reduced active Snowflake storage 57% (~$12K/yr).",
+          "Identified ~$33K/yr idle-warehouse waste.",
+          "Surfaced ~$33.5K/yr untagged spend."
+        ]
+      },
+      {
+        "name": "Engineering Quality",
+        "items": [
+          "Built test suite from 0 to 351 checks.",
+          "Fixed two SQL-injection vulnerabilities.",
+          "Migrated to Python 3.12.",
+          "Removed ~44K lines of dead code."
+        ]
+      },
+      {
+        "name": "Tooling & Automation",
+        "items": [
+          "Built table-access dictionary over 5,134 tables.",
+          "Automated monthly Snowflake cost allocation for Accounting.",
+          "Created usage-diagnostics tool for warehouse tuning."
+        ]
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "title": "Platform Modernization & Stability",
+    "highlights": [
+      "Migrated Snowflake authentication to RSA key-pair.",
+      "Built automated Slack KPI reporting system across all games.",
+      "Re-engineered heavy ETLs to incremental MERGE for performance.",
+      "Delivered re-engagement email pipeline with validation.",
+      "Revamped CI/CD with parallel test stages."
+    ],
+    "categories": [
+      {
+        "name": "Security",
+        "items": [
+          "Migrated to RSA key-pair authentication.",
+          "Moved credentials to AWS Parameter Store (SSM).",
+          "Replaced deprecated slackclient with slack_sdk."
+        ]
+      },
+      {
+        "name": "Business Enablement",
+        "items": [
+          "Shipped daily, monthly, hourly Slack reports for all games.",
+          "Built chargeback ETLs and Google Drive ingestion.",
+          "Created email validation tool for campaigns."
+        ]
+      },
+      {
+        "name": "Performance",
+        "items": [
+          "Converted heavy ETLs to incremental MERGE loads.",
+          "Reduced query complexity (removed unnecessary JOINs).",
+          "Kicked off sunset-game decommissioning."
+        ]
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Analytics Foundation & Reliability",
+    "highlights": [
+      "Built the full Marketing / AppsFlyer analytics pipeline.",
+      "Delivered A/B-testing analytics ETL suite.",
+      "Established Slack reporting foundation.",
+      "Fixed major production data issues (CAT-297 retention outage).",
+      "Migrated Looker queries to Snowflake views."
+    ],
+    "categories": [
+      {
+        "name": "New Domains",
+        "items": [
+          "Built AppsFlyer ingestion and attribution ETLs.",
+          "Delivered A/B-test variant/times/player ETLs.",
+          "Added queue-history ETLs and VC Solar Shard leaderboard."
+        ]
+      },
+      {
+        "name": "Platform Health",
+        "items": [
+          "Fixed CAT-297 retention data outage.",
+          "Improved revenue and offers accuracy.",
+          "Resolved recurring production issues (MERGE, timestamps)."
+        ]
+      },
+      {
+        "name": "Developer Experience",
+        "items": [
+          "Introduced platform's Slack reporting capability.",
+          "Added Jenkins ETL pull script.",
+          "Adopted Flake8 (80-char) formatting."
+        ]
+      }
+    ]
+  }
+]

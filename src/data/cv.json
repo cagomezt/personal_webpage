@@ -1,0 +1,96 @@
+{
+  "personalInfo": {
+    "name": "Carlos Gomez, MSc",
+    "title": "Senior Data Engineer / Head of Data Department",
+    "contact": {
+      "email": "teshima@gmail.com",
+      "phone": "(250) 415-2226",
+      "location": "Victoria, BC, Canada",
+      "linkedin": "/cagomezt",
+      "github": "/cagomezt"
+    },
+    "summary": "Data engineer and analytics platform owner with 14+ years building production data pipelines, warehouses, and decision-support systems. Track record of single-handedly shipping and maintaining production Python + SQL platforms at scale (200+ scheduled jobs, 297 SQL pipelines, 119 Python modules, 0→377 tests), reducing time-to-detect from days to minutes."
+  },
+  "skills": {
+    "programming": ["Python (expert)", "SQL / PLSQL", "Java / Java EE", "JavaScript", "TypeScript", "C / C++", "Shell / Bash"],
+    "frameworks": ["pytest", "DBT", "Jenkins (CI/CD)", "Flask / FastAPI", "REST / GraphQL"],
+    "dataStorage": ["Snowflake (advanced)", "PostgreSQL", "MongoDB", "Redis", "BigQuery"],
+    "cloudDevops": ["AWS (Glue, Athena, S3, Redshift, IAM)", "Docker", "Kubernetes", "Terraform", "GitHub Actions", "Airflow"]
+  },
+  "experience": [
+    {
+      "title": "Senior Data Engineer / Head of Data Department",
+      "company": "Kixeye (Stillfront Group)",
+      "period": "Aug 2025 – Present",
+      "location": "Victoria, BC, Canada",
+      "description": "Owner of the Game Analytics ETL platform powering analytics for live games (Battle Pirates, War Commander, Vega Conflict). Sole data-department member — sets technical direction, ships work, runs on-call.",
+      "achievements": [
+        "Eliminated silent ETL failures across ~200-job Snowflake pipeline, reducing time-to-detect from days to minutes by routing failures to Slack.",
+        "Built automated test suite from 0 to 377 passing tests (all external services mocked), enabling safe refactors of a 119-module framework with no regressions.",
+        "Removed hardcoded credentials (Snowflake key, Slack/AWS tokens) by moving secrets to environment/.env with regression tests.",
+        "Closed SQL-injection vectors across all ETL drivers by enforcing identifier/string-escaping helpers.",
+        "Decommissioned 3 retired games by removing ~310 ETL files and 47 scheduled jobs using a reversible process with audit logs.",
+        "Hardened DataFrame→Snowflake loader (header sanitization, de-duplication), converting cryptic crashes into clear alerts."
+      ],
+      "tech": ["Python", "SQL", "Snowflake", "pandas", "pytest", "Jenkins", "Slack API", "Google Sheets API", "AWS", "Git", "Docker"]
+    },
+    {
+      "title": "Senior Analytics Manager",
+      "company": "PopReach Corp.",
+      "period": "Jun 2022 – Aug 2023",
+      "location": "Vancouver, BC, Canada",
+      "description": "Owned data architecture, governance, and analytics for marketing and live games.",
+      "achievements": [
+        "Built marketing data pipeline pulling AppsFlyer API data into the warehouse on cron schedule.",
+        "Cut manual tasks by 34% by instrumenting cron-job automation and unifying data extraction with downstream reporting.",
+        "Designed statistical and ML revenue-forecast models (AutoTS, TensorFlow) for marketing-spend decisions.",
+        "Integrated Slack with reporting to surface data in the right channel, improving stakeholder efficiency by 13%."
+      ],
+      "tech": ["AWS", "Python", "PostgreSQL", "Tableau", "Amplitude", "QuickSight", "AppsFlyer API", "Slack API", "TensorFlow"]
+    },
+    {
+      "title": "Product Manager (Analytics & Live Ops)",
+      "company": "Kixeye",
+      "period": "Sep 2019 – Jun 2022",
+      "location": "Victoria, BC, Canada",
+      "description": "Managed event design, mobile-game live operations, analytics, and process optimization.",
+      "achievements": [
+        "Improved event setup efficiency by 73% and reduced human errors by 33% through tooling and process enhancements.",
+        "Cut dashboard creation time by 30% by designing and shipping a BP data warehouse with semantic-layer models (LookML).",
+        "Built a statistical forecast model with ±5% error that informed unit design and yearly event seasons.",
+        "Designed and shipped A/B test experiments that boosted D1 retention by 7% and playing time by 10%."
+      ],
+      "tech": ["Snowflake", "Looker / LookML", "MySQL", "Tableau", "SQL", "Jenkins", "Jira"]
+    },
+    {
+      "title": "Software Consultant",
+      "company": "CGI",
+      "period": "May 2016 – May 2018",
+      "location": "Victoria, BC, Canada",
+      "description": "Developed a web platform for the BC Ministry of Education and led DevOps for continued deployment.",
+      "achievements": [
+        "Cut new-developer setup time from 1 week to 1 hour by automating local developer environment setup.",
+        "Saved $70K/year by refactoring the platform front end with Bootstrap + JavaScript + jQuery.",
+        "Shipped CI/CD with Jenkins + Selenium + Docker + JBoss."
+      ],
+      "tech": ["Java EE", "JBoss", "Oracle", "MySQL", "Jenkins", "Docker", "JavaScript", "Bootstrap", "Selenium"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Computer Science",
+      "institution": "University of Victoria",
+      "year": "2015"
+    },
+    {
+      "degree": "Master of Computer Systems Engineering",
+      "institution": "Universidad del Valle del Cauca",
+      "year": "2013"
+    },
+    {
+      "degree": "Bachelor's in Computer Systems Engineering",
+      "institution": "Universidad Icesi",
+      "year": "2005"
+    }
+  ]
+}
