@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom'
 import { Navbar, Nav, Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
 import cvData from './data/cv.json'
 import achievementsData from './data/achievements.json'
@@ -7,19 +7,22 @@ import './index.css'
 
 function Navigation() {
   const location = useLocation()
+  const navigate = useNavigate()
   const isActive = (path: string) => location.pathname === path ? 'active' : ''
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="mb-4">
       <Container>
-        <Navbar.Brand as={Link} to="/">Carlos Gomez</Navbar.Brand>
+        <Navbar.Brand onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          Carlos Gomez
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" className={isActive('/')}>Home</Nav.Link>
-            <Nav.Link as={Link} to="/cv" className={isActive('/cv')}>CV</Nav.Link>
-            <Nav.Link as={Link} to="/achievements" className={isActive('/achievements')}>Achievements</Nav.Link>
-            <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
+            <Nav.Link onClick={() => navigate('/')} className={isActive('/')} style={{ cursor: 'pointer' }}>Home</Nav.Link>
+            <Nav.Link onClick={() => navigate('/cv')} className={isActive('/cv')} style={{ cursor: 'pointer' }}>CV</Nav.Link>
+            <Nav.Link onClick={() => navigate('/achievements')} className={isActive('/achievements')} style={{ cursor: 'pointer' }}>Achievements</Nav.Link>
+            <Nav.Link onClick={() => navigate('/contact')} className={isActive('/contact')} style={{ cursor: 'pointer' }}>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
