@@ -76,8 +76,3 @@ To deploy:
    - Source: Deploy from a branch
    - Branch: `main` / `dist` folder (if using GitHub Actions) OR build locally and push `dist` to `gh-pages` branch
 
-## 📧 Contact
-
-- Email: teshima@gmail.com
-- LinkedIn: /cagomezt
-- GitHub: /cagomezt
