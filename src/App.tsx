@@ -67,20 +67,8 @@ function CVPage() {
       </div>
 
       <div className="card">
-        <h3>Contact Information</h3>
+        <h3>Contact</h3>
         <div style={{marginTop: '1rem'}}>
-          <div className="contact-item">
-            <span>📧</span>
-            <span>{cvData.personalInfo.contact.email}</span>
-          </div>
-          <div className="contact-item">
-            <span>📱</span>
-            <span>{cvData.personalInfo.contact.phone}</span>
-          </div>
-          <div className="contact-item">
-            <span>📍</span>
-            <span>{cvData.personalInfo.contact.location}</span>
-          </div>
           <div className="contact-item">
             <span>💼</span>
             <a href={`https://linkedin.com${cvData.personalInfo.contact.linkedin}`} target="_blank" rel="noopener noreferrer">
@@ -132,7 +120,7 @@ function CVPage() {
         <div key={index} className="card">
           <h3 style={{color: '#646cff'}}>{exp.title}</h3>
           <p style={{color: '#a1a1aa', marginBottom: '0.5rem'}}>
-            {exp.company} · {exp.period} · {exp.location}
+            {exp.company} · {exp.period}
           </p>
           <p style={{marginBottom: '1rem'}}>{exp.description}</p>
 
@@ -211,29 +199,11 @@ function ContactPage() {
       <h1>Get In Touch</h1>
 
       <div className="card">
-        <h3>Contact Information</h3>
-        <div style={{marginTop: '1.5rem'}}>
-          <div className="contact-item" style={{fontSize: '1.1rem', marginBottom: '1rem'}}>
-            <span style={{fontSize: '1.5rem'}}>📧</span>
-            <a href={`mailto:${cvData.personalInfo.contact.email}`} style={{fontSize: '1.1rem'}}>
-              {cvData.personalInfo.contact.email}
-            </a>
-          </div>
+        <h3>Get In Touch</h3>
+        <p style={{marginTop: '1rem', marginBottom: '1.5rem'}}>
+          Connect with me through professional platforms below.
+        </p>
 
-          <div className="contact-item" style={{fontSize: '1.1rem', marginBottom: '1rem'}}>
-            <span style={{fontSize: '1.5rem'}}>📱</span>
-            <span style={{fontSize: '1.1rem'}}>{cvData.personalInfo.contact.phone}</span>
-          </div>
-
-          <div className="contact-item" style={{fontSize: '1.1rem', marginBottom: '1rem'}}>
-            <span style={{fontSize: '1.5rem'}}>📍</span>
-            <span style={{fontSize: '1.1rem'}}>{cvData.personalInfo.contact.location}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="card">
-        <h3>Connect on Social Media</h3>
         <div style={{marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
           <a
             href={`https://linkedin.com${cvData.personalInfo.contact.linkedin}`}

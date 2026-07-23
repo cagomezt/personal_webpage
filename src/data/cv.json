@@ -3,9 +3,6 @@
     "name": "Carlos Gomez, MSc",
     "title": "Senior Data Engineer / Head of Data Department",
     "contact": {
-      "email": "teshima@gmail.com",
-      "phone": "(250) 415-2226",
-      "location": "Victoria, BC, Canada",
       "linkedin": "/cagomezt",
       "github": "/cagomezt"
     },
@@ -22,7 +19,6 @@
       "title": "Senior Data Engineer / Head of Data Department",
       "company": "Kixeye (Stillfront Group)",
       "period": "Aug 2025 – Present",
-      "location": "Victoria, BC, Canada",
       "description": "Owner of the Game Analytics ETL platform powering analytics for live games (Battle Pirates, War Commander, Vega Conflict). Sole data-department member — sets technical direction, ships work, runs on-call.",
       "achievements": [
         "Eliminated silent ETL failures across ~200-job Snowflake pipeline, reducing time-to-detect from days to minutes by routing failures to Slack.",
@@ -38,7 +34,6 @@
       "title": "Senior Analytics Manager",
       "company": "PopReach Corp.",
       "period": "Jun 2022 – Aug 2023",
-      "location": "Vancouver, BC, Canada",
       "description": "Owned data architecture, governance, and analytics for marketing and live games.",
       "achievements": [
         "Built marketing data pipeline pulling AppsFlyer API data into the warehouse on cron schedule.",
@@ -52,7 +47,6 @@
       "title": "Product Manager (Analytics & Live Ops)",
       "company": "Kixeye",
       "period": "Sep 2019 – Jun 2022",
-      "location": "Victoria, BC, Canada",
       "description": "Managed event design, mobile-game live operations, analytics, and process optimization.",
       "achievements": [
         "Improved event setup efficiency by 73% and reduced human errors by 33% through tooling and process enhancements.",
@@ -66,7 +60,6 @@
       "title": "Software Consultant",
       "company": "CGI",
       "period": "May 2016 – May 2018",
-      "location": "Victoria, BC, Canada",
       "description": "Developed a web platform for the BC Ministry of Education and led DevOps for continued deployment.",
       "achievements": [
         "Cut new-developer setup time from 1 week to 1 hour by automating local developer environment setup.",
