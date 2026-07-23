@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { Navbar, Nav, Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
 import cvData from './data/cv.json'
 import achievementsData from './data/achievements.json'
 import './index.css'
@@ -8,256 +9,283 @@ function Navigation() {
   const isActive = (path: string) => location.pathname === path ? 'active' : ''
 
   return (
-    <nav>
-      <ul>
-        <li><Link to="/" className={isActive('/')}>Home</Link></li>
-        <li><Link to="/cv" className={isActive('/cv')}>CV</Link></li>
-        <li><Link to="/achievements" className={isActive('/achievements')}>Achievements</Link></li>
-        <li><Link to="/contact" className={isActive('/contact')}>Contact</Link></li>
-      </ul>
-    </nav>
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="mb-4">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Carlos Gomez</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/" className={isActive('/')}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/cv" className={isActive('/cv')}>CV</Nav.Link>
+            <Nav.Link as={Link} to="/achievements" className={isActive('/achievements')}>Achievements</Nav.Link>
+            <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }
 
 function HomePage() {
   return (
-    <div className="container">
-      <h1>{cvData.personalInfo.name}</h1>
-      <h2 style={{fontSize: '1.5rem', color: '#646cff', marginBottom: '1.5rem'}}>
-        {cvData.personalInfo.title}
-      </h2>
+    <Container>
+      <Row className="mb-5">
+        <Col>
+          <h1 className="display-4 fw-bold mb-3">{cvData.personalInfo.name}</h1>
+          <h2 className="text-primary mb-4">{cvData.personalInfo.title}</h2>
+          <Alert variant="info">
+            {cvData.personalInfo.summary}
+          </Alert>
+        </Col>
+      </Row>
 
-      <div className="card">
-        <h3>About Me</h3>
-        <p>{cvData.personalInfo.summary}</p>
-      </div>
+      <Card className="mb-4">
+        <Card.Body>
+          <Card.Title as="h3">Quick Links</Card.Title>
+          <div className="d-grid gap-2 d-md-block mt-3">
+            <Button as={Link} to="/cv" variant="primary" size="lg" className="me-2">
+              📄 View my full CV
+            </Button>
+            <Button as={Link} to="/achievements" variant="outline-primary" size="lg" className="me-2">
+              🏆 See my achievements
+            </Button>
+            <Button as={Link} to="/contact" variant="outline-secondary" size="lg">
+              📧 Get in touch
+            </Button>
+          </div>
+        </Card.Body>
+      </Card>
 
-      <div className="card">
-        <h3>Quick Links</h3>
-        <ul style={{listStyle: 'none', marginTop: '1rem'}}>
-          <li style={{marginBottom: '0.5rem'}}>👉 <Link to="/cv">View my full CV</Link></li>
-          <li style={{marginBottom: '0.5rem'}}>🏆 <Link to="/achievements">See my recent achievements</Link></li>
-          <li style={{marginBottom: '0.5rem'}}>📧 <Link to="/contact">Get in touch</Link></li>
-        </ul>
-      </div>
-
-      <div className="card">
-        <h3>Key Highlights</h3>
-        <ul style={{marginTop: '1rem', paddingLeft: '1.5rem'}}>
-          <li style={{marginBottom: '0.5rem'}}>14+ years of experience in Data Engineering</li>
-          <li style={{marginBottom: '0.5rem'}}>Shipped and maintained production Python + SQL platforms at scale</li>
-          <li style={{marginBottom: '0.5rem'}}>Built test suite from 0 to 377 passing tests</li>
-          <li style={{marginBottom: '0.5rem'}}>Reduced Snowflake costs by ~50% (compute) and 57% (storage)</li>
-          <li style={{marginBottom: '0.5rem'}}>Single-handedly managed entire data department at Kixeye</li>
-        </ul>
-      </div>
-    </div>
+      <Card className="mb-4">
+        <Card.Body>
+          <Card.Title as="h3">Key Highlights</Card.Title>
+          <ul className="list-group list-group-flush mt-3">
+            <li className="list-group-item">
+              <strong>14+ years</strong> of experience in Data Engineering
+            </li>
+            <li className="list-group-item">
+              Shipped and maintained production Python + SQL platforms at scale
+            </li>
+            <li className="list-group-item">
+              Built test suite from <strong>0 to 377 tests</strong>
+            </li>
+            <li className="list-group-item">
+              Reduced Snowflake costs by <strong>~50% (compute)</strong> and <strong>57% (storage)</strong>
+            </li>
+            <li className="list-group-item">
+              Single-handedly managed entire data department at Kixeye
+            </li>
+          </ul>
+        </Card.Body>
+      </Card>
+    </Container>
   )
 }
 
 function CVPage() {
   return (
-    <div className="container">
-      <div className="card">
-        <h1>{cvData.personalInfo.name}</h1>
-        <p style={{fontSize: '1.25rem', color: '#646cff', marginBottom: '1rem'}}>
-          {cvData.personalInfo.title}
-        </p>
-        <p>{cvData.personalInfo.summary}</p>
-      </div>
+    <Container>
+      <Row className="mb-4">
+        <Col>
+          <Card>
+            <Card.Body>
+              <h1>{cvData.personalInfo.name}</h1>
+              <h3 className="text-primary">{cvData.personalInfo.title}</h3>
+              <p className="lead mt-3">{cvData.personalInfo.summary}</p>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
 
-      <div className="card">
-        <h3>Contact</h3>
-        <div style={{marginTop: '1rem'}}>
-          <div className="contact-item">
-            <span>💼</span>
-            <a href={`https://linkedin.com${cvData.personalInfo.contact.linkedin}`} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
+      <Card className="mb-4">
+        <Card.Body>
+          <Card.Title as="h3">Contact</Card.Title>
+          <div className="mt-3">
+            <div className="mb-2">
+              <strong>LinkedIn:</strong>{' '}
+              <a href="https://www.linkedin.com/in/cagomezt/" target="_blank" rel="noopener noreferrer" className="text-primary">
+                /in/cagomezt/
+              </a>
+            </div>
+            <div className="mb-2">
+              <strong>GitHub:</strong>{' '}
+              <a href={`https://github.com${cvData.personalInfo.contact.github}`} target="_blank" rel="noopener noreferrer" className="text-primary">
+                {cvData.personalInfo.contact.github}
+              </a>
+            </div>
           </div>
-          <div className="contact-item">
-            <span>💻</span>
-            <a href={`https://github.com${cvData.personalInfo.contact.github}`} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
+        </Card.Body>
+      </Card>
 
-      <h2>Technical Skills</h2>
-      <div className="card">
-        <h3>Programming</h3>
-        <div style={{marginTop: '0.5rem'}}>
-          {cvData.skills.programming.map((skill, index) => (
-            <span key={index} className="skill-tag">{skill}</span>
-          ))}
-        </div>
-
-        <h3 style={{marginTop: '1.5rem'}}>Frameworks & Runtimes</h3>
-        <div style={{marginTop: '0.5rem'}}>
-          {cvData.skills.frameworks.map((skill, index) => (
-            <span key={index} className="skill-tag">{skill}</span>
-          ))}
-        </div>
-
-        <h3 style={{marginTop: '1.5rem'}}>Data & Storage</h3>
-        <div style={{marginTop: '0.5rem'}}>
-          {cvData.skills.dataStorage.map((skill, index) => (
-            <span key={index} className="skill-tag">{skill}</span>
-          ))}
-        </div>
-
-        <h3 style={{marginTop: '1.5rem'}}>Cloud & DevOps</h3>
-        <div style={{marginTop: '0.5rem'}}>
-          {cvData.skills.cloudDevops.map((skill, index) => (
-            <span key={index} className="skill-tag">{skill}</span>
-          ))}
-        </div>
-      </div>
-
-      <h2>Professional Experience</h2>
-      {cvData.experience.map((exp, index) => (
-        <div key={index} className="card">
-          <h3 style={{color: '#646cff'}}>{exp.title}</h3>
-          <p style={{color: '#a1a1aa', marginBottom: '0.5rem'}}>
-            {exp.company} · {exp.period}
-          </p>
-          <p style={{marginBottom: '1rem'}}>{exp.description}</p>
-
-          <h4 style={{fontSize: '1.1rem', marginTop: '1rem', marginBottom: '0.5rem'}}>Key Achievements</h4>
-          <ul style={{paddingLeft: '1.5rem'}}>
-            {exp.achievements.map((achievement, i) => (
-              <li key={i} style={{marginBottom: '0.5rem'}}>{achievement}</li>
+      <h2 className="mt-5 mb-4">Technical Skills</h2>
+      <Card className="mb-4">
+        <Card.Body>
+          <h4 className="mb-3">Programming</h4>
+          <div className="mb-4">
+            {cvData.skills.programming.map((skill, index) => (
+              <Badge key={index} bg="secondary" className="me-2 mb-2">{skill}</Badge>
             ))}
-          </ul>
+          </div>
 
-          <h4 style={{fontSize: '1.1rem', marginTop: '1rem', marginBottom: '0.5rem'}}>Tech Stack</h4>
+          <h4 className="mb-3">Frameworks & Runtimes</h4>
+          <div className="mb-4">
+            {cvData.skills.frameworks.map((skill, index) => (
+              <Badge key={index} bg="secondary" className="me-2 mb-2">{skill}</Badge>
+            ))}
+          </div>
+
+          <h4 className="mb-3">Data & Storage</h4>
+          <div className="mb-4">
+            {cvData.skills.dataStorage.map((skill, index) => (
+              <Badge key={index} bg="secondary" className="me-2 mb-2">{skill}</Badge>
+            ))}
+          </div>
+
+          <h4 className="mb-3">Cloud & DevOps</h4>
           <div>
-            {exp.tech.map((tech, i) => (
-              <span key={i} className="skill-tag">{tech}</span>
+            {cvData.skills.cloudDevops.map((skill, index) => (
+              <Badge key={index} bg="secondary" className="me-2 mb-2">{skill}</Badge>
             ))}
           </div>
-        </div>
+        </Card.Body>
+      </Card>
+
+      <h2 className="mt-5 mb-4">Professional Experience</h2>
+      {cvData.experience.map((exp, index) => (
+        <Card key={index} className="mb-4">
+          <Card.Body>
+            <Card.Title as="h3" className="text-primary">{exp.title}</Card.Title>
+            <Card.Subtitle className="mb-3 text-muted">
+              {exp.company} · {exp.period}
+            </Card.Subtitle>
+            <Card.Text className="mb-3">{exp.description}</Card.Text>
+
+            <h5 className="mt-4 mb-2">Key Achievements</h5>
+            <ul>
+              {exp.achievements.map((achievement, i) => (
+                <li key={i} className="mb-2">{achievement}</li>
+              ))}
+            </ul>
+
+            <h5 className="mt-4 mb-2">Tech Stack</h5>
+            <div>
+              {exp.tech.map((tech, i) => (
+                <Badge key={i} bg="light" text="dark" className="me-1 mb-1">{tech}</Badge>
+              ))}
+            </div>
+          </Card.Body>
+        </Card>
       ))}
 
-      <h2>Education</h2>
-      <div className="card">
-        {cvData.education.map((edu, index) => (
-          <div key={index} style={{marginBottom: '1rem'}}>
-            <h3 style={{fontSize: '1.1rem', marginBottom: '0.25rem'}}>{edu.degree}</h3>
-            <p style={{color: '#a1a1aa'}}>{edu.institution} · {edu.year}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+      <h2 className="mt-5 mb-4">Education</h2>
+      <Card>
+        <Card.Body>
+          {cvData.education.map((edu, index) => (
+            <div key={index} className="mb-3">
+              <h5 className="mb-1">{edu.degree}</h5>
+              <p className="text-muted mb-0">{edu.institution} · {edu.year}</p>
+            </div>
+          ))}
+        </Card.Body>
+      </Card>
+    </Container>
   )
 }
 
 function AchievementsPage() {
   return (
-    <div className="container">
-      <h1>Achievements & Impact</h1>
-      <p style={{marginBottom: '2rem', fontSize: '1.1rem', color: '#a1a1aa'}}>
+    <Container>
+      <h1 className="mb-4">Achievements & Impact</h1>
+      <p className="lead text-muted mb-5">
         A timeline of key accomplishments and the measurable impact delivered.
       </p>
 
-      <div className="timeline">
-        {achievementsData.map((yearData, index) => (
-          <div key={index} className="timeline-item">
-            <div className="timeline-year">{yearData.year}</div>
-            <div className="card">
-              <h3 style={{color: '#646cff'}}>{yearData.title}</h3>
-              <ul style={{marginTop: '1rem', marginBottom: '1.5rem', paddingLeft: '1.5rem'}}>
+      {achievementsData.map((yearData, index) => (
+        <div key={index} className="mb-5">
+          <h2 className="text-primary mb-4">{yearData.year}</h2>
+          <Card>
+            <Card.Body>
+              <Card.Title as="h3">{yearData.title}</Card.Title>
+              <ul className="mt-3 mb-4">
                 {yearData.highlights.map((highlight, i) => (
-                  <li key={i} style={{marginBottom: '0.5rem'}}>{highlight}</li>
+                  <li key={i} className="mb-2">{highlight}</li>
                 ))}
               </ul>
 
-              <div className="achievements-grid">
+              <Row>
                 {yearData.categories.map((category, catIndex) => (
-                  <div key={catIndex} style={{background: '#2a2a2a', padding: '1rem', borderRadius: '4px', border: '1px solid #333'}}>
-                    <h4 style={{fontSize: '1rem', marginBottom: '0.75rem', color: '#ffffff'}}>{category.name}</h4>
-                    <ul style={{paddingLeft: '1.25rem', fontSize: '0.9rem'}}>
-                      {category.items.map((item, itemIndex) => (
-                        <li key={itemIndex} style={{marginBottom: '0.25rem', color: '#a1a1aa'}}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  <Col key={catIndex} md={6} lg={4} className="mb-3">
+                    <Card bg="light" text="dark">
+                      <Card.Body>
+                        <Card.Title as="h6">{category.name}</Card.Title>
+                        <ul className="mb-0 ps-3" style={{fontSize: '0.9rem'}}>
+                          {category.items.map((item, itemIndex) => (
+                            <li key={itemIndex} className="mb-1 text-muted">{item}</li>
+                          ))}
+                        </ul>
+                      </Card.Body>
+                    </Card>
+                  </Col>
                 ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+              </Row>
+            </Card.Body>
+          </Card>
+        </div>
+      ))}
+    </Container>
   )
 }
 
 function ContactPage() {
   return (
-    <div className="container">
-      <h1>Get In Touch</h1>
+    <Container>
+      <h1 className="mb-4">Get In Touch</h1>
 
-      <div className="card">
-        <h3>Get In Touch</h3>
-        <p style={{marginTop: '1rem', marginBottom: '1.5rem'}}>
-          Connect with me through professional platforms below.
-        </p>
+      <Card className="mb-4">
+        <Card.Body>
+          <Card.Title as="h3">Connect on Professional Platforms</Card.Title>
+          <p className="mt-3">
+            Connect with me through professional platforms below.
+          </p>
 
-        <div style={{marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
-          <a
-            href={`https://linkedin.com${cvData.personalInfo.contact.linkedin}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card"
-            style={{
-              padding: '1rem 1.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              minWidth: '150px',
-              justifyContent: 'center',
-              background: '#0077b5',
-              border: 'none',
-              color: 'white'
-            }}
-          >
-            <span>💼</span> LinkedIn
-          </a>
+          <div className="d-grid gap-3 d-md-block mt-4">
+            <Button
+              href="https://www.linkedin.com/in/cagomezt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              size="lg"
+              className="me-2"
+            >
+              💼 LinkedIn Profile
+            </Button>
 
-          <a
-            href={`https://github.com${cvData.personalInfo.contact.github}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card"
-            style={{
-              padding: '1rem 1.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              minWidth: '150px',
-              justifyContent: 'center',
-              background: '#333',
-              border: 'none',
-              color: 'white'
-            }}
-          >
-            <span>💻</span> GitHub
-          </a>
-        </div>
-      </div>
+            <Button
+              href={`https://github.com${cvData.personalInfo.contact.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="dark"
+              size="lg"
+            >
+              💻 GitHub Profile
+            </Button>
+          </div>
+        </Card.Body>
+      </Card>
 
-      <div className="card">
-        <h3>About This Site</h3>
-        <p style={{marginTop: '1rem', color: '#a1a1aa'}}>
-          This personal webpage was built with React, TypeScript, and Vite. It showcases my professional experience,
-          technical skills, and key achievements in data engineering and analytics platform development.
-        </p>
-        <p style={{marginTop: '1rem', color: '#a1a1aa'}}>
-          The site is deployed on GitHub Pages and features a responsive design that works on all devices.
-        </p>
-      </div>
-    </div>
+      <Card>
+        <Card.Body>
+          <Card.Title as="h3">About This Site</Card.Title>
+          <p className="mt-3 text-muted">
+            This personal webpage was built with React, TypeScript, Vite, and Bootstrap. It showcases my professional experience,
+            technical skills, and key achievements in data engineering and analytics platform development.
+          </p>
+          <p className="text-muted">
+            The site is deployed on GitHub Pages and features a responsive design that works on all devices.
+          </p>
+        </Card.Body>
+      </Card>
+    </Container>
   )
 }
 

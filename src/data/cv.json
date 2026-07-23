@@ -3,8 +3,8 @@
     "name": "Carlos Gomez, MSc",
     "title": "Senior Data Engineer / Head of Data Department",
     "contact": {
-      "linkedin": "/cagomezt",
-      "github": "/cagomezt"
+      "linkedin": "https://www.linkedin.com/in/cagomezt/",
+      "github": "https://github.com/cagomezt"
     },
     "summary": "Data engineer and analytics platform owner with 14+ years building production data pipelines, warehouses, and decision-support systems. Track record of single-handedly shipping and maintaining production Python + SQL platforms at scale (200+ scheduled jobs, 297 SQL pipelines, 119 Python modules, 0→377 tests), reducing time-to-detect from days to minutes."
   },
