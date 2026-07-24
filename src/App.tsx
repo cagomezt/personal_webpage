@@ -1,32 +1,54 @@
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom'
-import { Navbar, Nav, Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
+import { Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
 import cvData from './data/cv.json'
 import achievementsData from './data/achievements.json'
 import { downloadMarkdown, generatePDFCV } from './utils/cvGenerator'
 import './index.css'
 
-function Navigation() {
+function Sidebar() {
   const location = useLocation()
   const navigate = useNavigate()
+  const [open, setOpen] = useState(false)
   const isActive = (path: string) => location.pathname === path ? 'active' : ''
 
+  const handleNavigate = (path: string) => {
+    navigate(path)
+    setOpen(false)
+  }
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="mb-4">
-      <Container>
-        <Navbar.Brand onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-          Carlos Gomez
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link onClick={() => navigate('/')} className={isActive('/')} style={{ cursor: 'pointer' }}>Home</Nav.Link>
-            <Nav.Link onClick={() => navigate('/cv')} className={isActive('/cv')} style={{ cursor: 'pointer' }}>CV</Nav.Link>
-            <Nav.Link onClick={() => navigate('/achievements')} className={isActive('/achievements')} style={{ cursor: 'pointer' }}>Achievements</Nav.Link>
-            <Nav.Link onClick={() => navigate('/contact')} className={isActive('/contact')} style={{ cursor: 'pointer' }}>Contact</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <button className="sidebar-toggle" onClick={() => setOpen(!open)}>
+        <i className="fa-solid fa-bars"></i>
+      </button>
+      <aside className={`sidebar ${open ? 'open' : ''}`}>
+        <img src="profile.jpg" alt="Carlos Gomez" className="sidebar-photo" />
+        <div className="sidebar-name">{cvData.personalInfo.name}</div>
+        <ul className="sidebar-menu">
+          <li className="sidebar-menu-item">
+            <a onClick={() => handleNavigate('/')} className={isActive('/')}>Home</a>
+          </li>
+          <li className="sidebar-menu-item">
+            <a onClick={() => handleNavigate('/cv')} className={isActive('/cv')}>CV</a>
+          </li>
+          <li className="sidebar-menu-item">
+            <a onClick={() => handleNavigate('/achievements')} className={isActive('/achievements')}>Achievements</a>
+          </li>
+          <li className="sidebar-menu-item">
+            <a onClick={() => handleNavigate('/contact')} className={isActive('/contact')}>Contact</a>
+          </li>
+        </ul>
+        <div className="sidebar-social">
+          <a href={cvData.personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer">
+            <i className="fa-brands fa-square-linkedin"></i>
+          </a>
+          <a href={cvData.personalInfo.contact.github} target="_blank" rel="noopener noreferrer">
+            <i className="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </aside>
+    </>
   )
 }
 
@@ -308,14 +330,16 @@ function ContactPage() {
 function App() {
   return (
     <Router>
-      <div>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/cv" element={<CVPage />} />
-          <Route path="/achievements" element={<AchievementsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
+      <div className="app-layout">
+        <Sidebar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/cv" element={<CVPage />} />
+            <Route path="/achievements" element={<AchievementsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   )
