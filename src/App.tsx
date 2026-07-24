@@ -230,11 +230,11 @@ function AchievementsPage() {
 
               <Row>
                 {yearData.categories.map((category, catIndex) => (
-                  <Col key={catIndex} md={6} lg={4} className="mb-3">
-                    <Card bg="light" text="dark">
-                      <Card.Body>
+                  <Col key={catIndex} md={6} lg={4} className="mb-3 d-flex">
+                    <Card bg="light" text="dark" className="w-100 h-100">
+                      <Card.Body className="d-flex flex-column">
                         <Card.Title as="h6">{category.name}</Card.Title>
-                        <ul className="mb-0 ps-3" style={{fontSize: '0.9rem'}}>
+                        <ul className="mb-0 ps-3 flex-grow-1" style={{fontSize: '0.9rem'}}>
                           {category.items.map((item, itemIndex) => (
                             <li key={itemIndex} className="mb-1 text-muted">{item}</li>
                           ))}
