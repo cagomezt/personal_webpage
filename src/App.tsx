@@ -118,15 +118,15 @@ function CVPage() {
           <Card.Title as="h3">Contact</Card.Title>
           <div className="mt-3">
             <div className="mb-2">
-              <strong>LinkedIn:</strong>{' '}
+              <i className="fa-brands fa-square-linkedin me-2"></i>
               <a href={cvData.personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary">
-                /in/cagomezt/
+                LinkedIn
               </a>
             </div>
             <div className="mb-2">
-              <strong>GitHub:</strong>{' '}
+              <i className="fa-brands fa-github me-2"></i>
               <a href={cvData.personalInfo.contact.github} target="_blank" rel="noopener noreferrer" className="text-primary">
-                /cagomezt
+                GitHub
               </a>
             </div>
           </div>
@@ -273,7 +273,7 @@ function ContactPage() {
               size="lg"
               className="me-2"
             >
-              💼 LinkedIn Profile
+              <i className="fa-brands fa-square-linkedin me-2"></i> LinkedIn Profile
             </Button>
 
             <Button
@@ -283,7 +283,7 @@ function ContactPage() {
               variant="dark"
               size="lg"
             >
-              💻 GitHub Profile
+              <i className="fa-brands fa-github me-2"></i> GitHub Profile
             </Button>
           </div>
         </Card.Body>
