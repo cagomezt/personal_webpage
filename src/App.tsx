@@ -30,7 +30,7 @@ function Sidebar() {
             <a onClick={() => handleNavigate('/')} className={isActive('/')}>Home</a>
           </li>
           <li className="sidebar-menu-item">
-            <a onClick={() => handleNavigate('/cv')} className={isActive('/cv')}>CV</a>
+            <a onClick={() => handleNavigate('/cv')} className={isActive('/cv')}>Resume</a>
           </li>
           <li className="sidebar-menu-item">
             <a onClick={() => handleNavigate('/achievements')} className={isActive('/achievements')}>Achievements</a>
@@ -83,24 +83,41 @@ function HomePage() {
 
       <Card className="mb-4">
         <Card.Body>
-          <Card.Title as="h3">Key Highlights</Card.Title>
-          <ul className="list-group list-group-flush mt-3">
-            <li className="list-group-item">
-              <strong>14+ years</strong> of experience in Data Engineering
-            </li>
-            <li className="list-group-item">
-              Shipped and maintained production Python + SQL platforms at scale
-            </li>
-            <li className="list-group-item">
-              Built test suite from <strong>0 to 377 tests</strong>
-            </li>
-            <li className="list-group-item">
-              Reduced Snowflake costs by <strong>~50% (compute)</strong> and <strong>57% (storage)</strong>
-            </li>
-            <li className="list-group-item">
-              Single-handedly managed entire data department at Kixeye
-            </li>
-          </ul>
+          <Card.Title as="h3">Career Impact at a Glance</Card.Title>
+          <Row className="mt-3 g-3">
+            <Col md={6} lg={3}>
+              <Card bg="light" className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div className="display-6 fw-bold text-primary">$1M+</div>
+                  <div className="text-muted small">Revenue generated through a single re-engagement campaign</div>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={6} lg={3}>
+              <Card bg="light" className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div className="display-6 fw-bold text-primary">$400K+/yr</div>
+                  <div className="text-muted small">Total cost savings across cloud, infrastructure, and licensing</div>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={6} lg={3}>
+              <Card bg="light" className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div className="display-6 fw-bold text-primary">96%</div>
+                  <div className="text-muted small">Faster analytics reporting through end-to-end automation</div>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={6} lg={3}>
+              <Card bg="light" className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div className="display-6 fw-bold text-primary">377</div>
+                  <div className="text-muted small">Automated tests built from zero, enabling zero-regression refactors</div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
     </Container>
