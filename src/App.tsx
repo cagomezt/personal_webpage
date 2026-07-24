@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
 import cvData from './data/cv.json'
 import achievementsData from './data/achievements.json'
@@ -35,17 +35,33 @@ function Sidebar() {
           <li className="sidebar-menu-item">
             <a onClick={() => handleNavigate('/achievements')} className={isActive('/achievements')}>Achievements</a>
           </li>
-          <li className="sidebar-menu-item">
-            <a onClick={() => handleNavigate('/contact')} className={isActive('/contact')}>Contact</a>
-          </li>
         </ul>
-        <div className="sidebar-social">
-          <a href={cvData.personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-square-linkedin"></i>
-          </a>
-          <a href={cvData.personalInfo.contact.github} target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-github"></i>
-          </a>
+
+        <div className="sidebar-info">
+          <div className="sidebar-info-section">
+            <div className="sidebar-info-label">Skills</div>
+            <div className="sidebar-info-text">Python · SQL · Snowflake · AWS · Docker · Airflow · DBT</div>
+          </div>
+          <div className="sidebar-info-section">
+            <div className="sidebar-info-label">Education</div>
+            <div className="sidebar-info-text">MSc Computer Science (UVic)<br />MSc Systems Engineering<br />BSc Systems Engineering</div>
+          </div>
+          <div className="sidebar-info-section">
+            <div className="sidebar-info-label">Languages</div>
+            <div className="sidebar-info-text">Spanish (Native)<br />English (Fluent)</div>
+          </div>
+        </div>
+
+        <div className="sidebar-contact">
+          <div className="sidebar-separator">Contact Me</div>
+          <div className="sidebar-social">
+            <a href={cvData.personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-square-linkedin"></i>
+            </a>
+            <a href={cvData.personalInfo.contact.github} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-github"></i>
+            </a>
+          </div>
         </div>
       </aside>
     </>
@@ -64,23 +80,6 @@ function HomePage() {
           </Alert>
         </Col>
       </Row>
-
-      <Card className="mb-4">
-        <Card.Body>
-          <Card.Title as="h3">Quick Links</Card.Title>
-          <div className="d-grid gap-2 d-md-block mt-3">
-            <Link to="/cv" className="btn btn-primary btn-lg me-2">
-              📄 View my full CV
-            </Link>
-            <Link to="/achievements" className="btn btn-outline-primary btn-lg me-2">
-              🏆 See my achievements
-            </Link>
-            <Link to="/contact" className="btn btn-outline-secondary btn-lg">
-              📧 Get in touch
-            </Link>
-          </div>
-        </Card.Body>
-      </Card>
 
       <Card className="mb-4">
         <Card.Body>

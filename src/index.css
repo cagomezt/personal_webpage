@@ -18,14 +18,14 @@ body {
   left: 0;
   width: 260px;
   height: 100vh;
-  background-color: #1a1a1a;
+  background: linear-gradient(180deg, #000000 0%, #2d2d2d 100%);
   border-right: 1px solid #333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   z-index: 1000;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1.25rem;
+  overflow-y: auto;
 }
 
 .sidebar-photo {
@@ -87,7 +87,6 @@ body {
 }
 
 .sidebar-social {
-  margin-top: 2rem;
   display: flex;
   gap: 1.5rem;
 }
@@ -100,6 +99,73 @@ body {
 
 .sidebar-social a:hover {
   color: #646cff;
+}
+
+.sidebar-info {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 0.5rem;
+}
+
+.sidebar-info-section {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.sidebar-info-label {
+  color: #646cff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-info-text {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.sidebar-contact {
+  margin-top: auto;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.sidebar-separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-separator::before,
+.sidebar-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar-separator::before {
+  margin-right: 0.5rem;
+}
+
+.sidebar-separator::after {
+  margin-left: 0.5rem;
+}
+
+.sidebar-separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar-contact .sidebar-social {
+  justify-content: center;
 }
 
 .main-content {
