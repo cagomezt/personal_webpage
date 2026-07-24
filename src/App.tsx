@@ -134,26 +134,6 @@ function CVPage() {
         </Col>
       </Row>
 
-      <Card className="mb-4">
-        <Card.Body>
-          <Card.Title as="h3">Contact</Card.Title>
-          <div className="mt-3">
-            <div className="mb-2">
-              <i className="fa-brands fa-square-linkedin me-2"></i>
-              <a href={cvData.personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary">
-                LinkedIn
-              </a>
-            </div>
-            <div className="mb-2">
-              <i className="fa-brands fa-github me-2"></i>
-              <a href={cvData.personalInfo.contact.github} target="_blank" rel="noopener noreferrer" className="text-primary">
-                GitHub
-              </a>
-            </div>
-          </div>
-        </Card.Body>
-      </Card>
-
       <h2 className="mt-5 mb-4">Technical Skills</h2>
       <Card className="mb-4">
         <Card.Body>
