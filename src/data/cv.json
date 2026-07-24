@@ -9,10 +9,10 @@
     "summary": "Senior data engineer with 14+ years building production analytics platforms at scale. Proven track record of owning end-to-end data infrastructure—from pipeline architecture to cost optimization—delivering measurable business impact: $89K/yr in cloud cost reductions, 50% faster incident detection, and zero-downtime migrations serving 200+ jobs across multiple live products."
   },
   "skills": {
-    "programming": ["Python (expert)", "SQL / PLSQL", "Java / Java EE", "JavaScript", "TypeScript", "C / C++", "Shell / Bash"],
+    "programming": ["Python (expert)", "SQL / PLSQL", "Java / Java EE", "JavaScript", "TypeScript", "C#", "Shell / Bash"],
     "frameworks": ["pytest", "DBT", "Jenkins (CI/CD)", "Flask / FastAPI", "REST / GraphQL"],
     "dataStorage": ["Snowflake (advanced)", "PostgreSQL", "MongoDB", "Redis", "BigQuery"],
-    "cloudDevops": ["AWS (Glue, Athena, S3, Redshift, IAM)", "Docker", "Kubernetes", "Terraform", "GitHub Actions", "Airflow"]
+    "cloudDevops": ["AWS (Glue, Athena, S3, Redshift, IAM)", "Docker", "Pulumi", "GitHub Actions", "Airflow"]
   },
   "experience": [
     {
@@ -30,7 +30,7 @@
         "Automated Accounting's monthly Snowflake cost allocation, as measured by per-game costs reconciling to the invoice to the cent, by building a Python tool (API + PDF fallback) replacing a manual spreadsheet process.",
         "Remediated 2 SQL-injection vulnerabilities in production, as measured by security findings SEC-02/SEC-03 closed with regression tests, by replacing string interpolation with parameterized queries."
       ],
-      "tech": ["Python", "SQL", "Snowflake", "pandas", "pytest", "Jenkins", "Slack API", "Google Sheets API", "AWS", "Git", "Docker"]
+      "tech": ["Python", "SQL", "Snowflake", "pandas", "pytest", "Jenkins", "Slack API", "Google Sheets API", "AWS", "Git", "Docker", "Tableau", "Pulumi", "Airflow", "DBT"]
     },
     {
       "title": "Senior Analytics Manager",
