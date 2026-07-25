@@ -325,7 +325,7 @@ function ContactPage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/personal_webpage">
       <div className="app-layout">
         <Sidebar />
         <main className="main-content">
