@@ -4,6 +4,21 @@ body {
     min-height: 100vh;
 }
 
+/* Override Bootstrap primary to match navbar cyan */
+.text-primary {
+    color: #26c9ff !important;
+}
+
+.btn-primary {
+    background-color: #26c9ff;
+    border-color: #26c9ff;
+}
+
+.btn-primary:hover {
+    background-color: #1ba8d8;
+    border-color: #1ba8d8;
+}
+
 /* ============ SIDEBAR LAYOUT ============ */
 
 .app-layout {
@@ -51,8 +66,8 @@ body {
 
 .sidebar-title {
     color: rgba(38, 201, 255, 0.9);
-    font-size: 0.85rem;
-    font-weight: 400;
+    font-size: 0.60rem;
+    font-weight: 600;
     text-align: center;
     margin-bottom: 2rem;
     letter-spacing: 1px;
@@ -200,7 +215,7 @@ body {
 .card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border-color: #646cff;
+    border-color: #26c9ff;
 }
 
 /* ============ TIMELINE ============ */
@@ -217,7 +232,7 @@ body {
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #646cff;
+    background-color: #26c9ff;
 }
 
 .timeline-item {
@@ -232,7 +247,7 @@ body {
     top: 0.5rem;
     width: 1rem;
     height: 1rem;
-    background-color: #646cff;
+    background-color: #26c9ff;
     border-radius: 50%;
     border: 3px solid #f8f9fa;
 }
@@ -240,19 +255,19 @@ body {
 .timeline-year {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #646cff;
+    color: #26c9ff;
     margin-bottom: 0.5rem;
 }
 
 /* ============ LINKS ============ */
 
 a {
-    color: #646cff;
+    color: #26c9ff;
     text-decoration: none;
 }
 
 a:hover {
-    color: #535bf2;
+    color: #1ba8d8;
     text-decoration: underline;
 }
 
