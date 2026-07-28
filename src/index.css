@@ -206,6 +206,13 @@ body {
     background: linear-gradient(144deg,rgba(255, 255, 255, 1) 0%, rgba(217, 217, 217, 1) 100%);
 }
 
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+    text-shadow: 2px 2px 1px #dee2e6;
+}
+
 /* ============ CARD EFFECTS ============ */
 
 .card {
