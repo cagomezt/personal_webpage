@@ -117,6 +117,7 @@ body {
     background-color: rgba(38, 201, 255, 0.1);
     border-left-color: #26c9ff;
     font-weight: 600;
+    text-shadow: 2px 2px 1px #1a1e2352;
 }
 
 .sidebar-social {
