@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import React from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
 import cvData from './data/cv.json'
@@ -11,18 +10,7 @@ function Sidebar() {
   const location = useLocation()
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
-  const [stars, setStars] = useState<{ x: number; y: number; size: number; delay: number }[]>([])
   const isActive = (path: string) => location.pathname === path ? 'active' : ''
-
-  React.useEffect(() => {
-    const newStars = Array.from({ length: 30 }, () => ({
-      x: Math.random() * 100,
-      y: 33 + Math.random() * 67,
-      size: 1 + Math.random() * 2,
-      delay: Math.random() * 15
-    }))
-    setStars(newStars)
-  }, [])
 
   const handleNavigate = (path: string) => {
     navigate(path)
@@ -35,19 +23,6 @@ function Sidebar() {
         <i className="fa-solid fa-bars"></i>
       </button>
       <aside className={`sidebar ${open ? 'open' : ''}`}>
-        {stars.map((star, index) => (
-          <div
-            key={index}
-            className="sidebar-star"
-            style={{
-              left: `${star.x}%`,
-              top: `${star.y}%`,
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              animationDelay: `${star.delay}s`
-            }}
-          />
-        ))}
         <img src="profile.jpg" alt="Carlos Gomez" className="sidebar-photo" />
         <div className="sidebar-name">{cvData.personalInfo.name}</div>
         <ul className="sidebar-menu">
