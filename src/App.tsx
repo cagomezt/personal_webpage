@@ -139,10 +139,10 @@ function CVPage() {
                 </div>
                 <div className="d-flex flex-column gap-2">
                   <Button variant="danger" size="sm" onClick={generatePDFCV}>
-                    📄 Download PDF
+                    <i className="fa-solid fa-file-pdf me-2"></i>Download PDF
                   </Button>
                   <Button variant="outline-secondary" size="sm" onClick={downloadMarkdown}>
-                    📝 Download Markdown
+                    <i className="fa-brands fa-markdown me-2"></i>Download Markdown
                   </Button>
                 </div>
               </div>
