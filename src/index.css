@@ -1,7 +1,6 @@
 /* Custom CSS overrides and enhancements for Bootstrap */
 
 body {
-  background-color: #f8f9fa;
   min-height: 100vh;
 }
 
@@ -177,6 +176,7 @@ body {
   flex: 1;
   width: calc(100% - 260px);
   padding: 2rem;
+  background: linear-gradient(315deg, #f1f1f1 0%, #f6f6f6 100%);
 }
 
 /* ============ CARD EFFECTS ============ */
