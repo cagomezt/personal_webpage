@@ -62,7 +62,7 @@ body {
     text-align: center;
     margin-bottom: 0.25rem;
     letter-spacing: 0.5px;
-    text-shadow: 0 2px 8px rgba(38, 201, 255, 0.4);
+    text-shadow: 0 2px 8px #212529;
 }
 
 .sidebar-title {
