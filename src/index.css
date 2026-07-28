@@ -151,6 +151,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 0.35rem;
+    text-shadow: 2px 2px 1px #1a1e23;
 }
 
 .sidebar-info-text {
