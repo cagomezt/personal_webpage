@@ -159,19 +159,6 @@ body {
     line-height: 1.5;
 }
 
-.sidebar-downloads {
-    width: 100%;
-    padding-top: 1rem;
-}
-
-.sidebar-downloads .sidebar-social {
-    justify-content: center;
-}
-
-.sidebar-downloads .sidebar-social a {
-    cursor: pointer;
-}
-
 .sidebar-contact {
     margin-top: auto;
     width: 100%;

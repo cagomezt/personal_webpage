@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from
 import { Container, Card, Button, Row, Col, Alert, Badge } from 'react-bootstrap'
 import cvData from './data/cv.json'
 import achievementsData from './data/achievements.json'
-import { downloadMarkdown, generatePDFCV } from './utils/cvGenerator'
 import './index.css'
 
 function Sidebar() {
@@ -50,18 +49,6 @@ function Sidebar() {
           <div className="sidebar-info-section">
             <div className="sidebar-info-label">Languages</div>
             <div className="sidebar-info-text">Spanish (Native)<br />English (Fluent)</div>
-          </div>
-        </div>
-
-        <div className="sidebar-downloads">
-          <div className="sidebar-separator">Downloads</div>
-          <div className="sidebar-social">
-            <a onClick={generatePDFCV} title="Download PDF">
-              <i className="fa-solid fa-file-pdf"></i>
-            </a>
-            <a onClick={downloadMarkdown} title="Download Markdown">
-              <i className="fa-brands fa-markdown"></i>
-            </a>
           </div>
         </div>
 
