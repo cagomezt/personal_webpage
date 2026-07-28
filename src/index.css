@@ -7,6 +7,7 @@ body {
 /* Override Bootstrap primary to match navbar cyan */
 .text-primary {
     color: #26c9ff !important;
+    text-shadow: 2px 2px 1px #dee2e6;
 }
 
 .btn-primary {
