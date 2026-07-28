@@ -26,6 +26,27 @@ body {
     z-index: 1000;
     padding: 1.5rem 1.25rem;
     overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.8;
+    background: radial-gradient(circle at bottom, transparent 0%, rgba(38, 201, 255, 0.1) 33%, transparent 66%);
+    animation: starfield 20s linear infinite;
+}
+
+.sidebar-star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: starFlash 15s ease-in-out infinite;
 }
 
 .sidebar-photo {
@@ -298,5 +319,27 @@ a:hover {
 
     .timeline-item::before {
         left: -1.4rem;
+    }
+}
+
+/* ============ STARFIELD ANIMATION ============ */
+
+@keyframes starFlash {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes starfield {
+    0% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 100% 0%;
     }
 }
