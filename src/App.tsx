@@ -53,6 +53,18 @@ function Sidebar() {
           </div>
         </div>
 
+        <div className="sidebar-downloads">
+          <div className="sidebar-separator">Downloads</div>
+          <div className="sidebar-social">
+            <a onClick={generatePDFCV} title="Download PDF">
+              <i className="fa-solid fa-file-pdf"></i>
+            </a>
+            <a onClick={downloadMarkdown} title="Download Markdown">
+              <i className="fa-brands fa-markdown"></i>
+            </a>
+          </div>
+        </div>
+
         <div className="sidebar-contact">
           <div className="sidebar-separator">Contact Me</div>
           <div className="sidebar-social">
@@ -132,19 +144,9 @@ function CVPage() {
         <Col>
           <Card>
             <Card.Body>
-              <div className="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
-                <div>
-                  <h1 className="mb-1">{cvData.personalInfo.name}</h1>
-                  <h3 className="text-primary">{cvData.personalInfo.title}</h3>
-                </div>
-                <div className="d-flex flex-column gap-2">
-                  <Button variant="danger" size="sm" onClick={generatePDFCV}>
-                    <i className="fa-solid fa-file-pdf me-2"></i>Download PDF
-                  </Button>
-                  <Button variant="outline-secondary" size="sm" onClick={downloadMarkdown}>
-                    <i className="fa-brands fa-markdown me-2"></i>Download Markdown
-                  </Button>
-                </div>
+              <div className="mb-3">
+                <h1 className="mb-1">{cvData.personalInfo.name}</h1>
+                <h3 className="text-primary">{cvData.personalInfo.title}</h3>
               </div>
               <p className="lead mt-3">{cvData.personalInfo.summary}</p>
             </Card.Body>
