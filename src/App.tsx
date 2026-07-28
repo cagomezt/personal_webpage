@@ -25,6 +25,7 @@ function Sidebar() {
       <aside className={`sidebar ${open ? 'open' : ''}`}>
         <img src="profile.jpg" alt="Carlos Gomez" className="sidebar-photo" />
         <div className="sidebar-name">{cvData.personalInfo.name}</div>
+        <div className="sidebar-title">{cvData.personalInfo.title}</div>
         <ul className="sidebar-menu">
           <li className="sidebar-menu-item">
             <a onClick={() => handleNavigate('/')} className={isActive('/')}>Home</a>
